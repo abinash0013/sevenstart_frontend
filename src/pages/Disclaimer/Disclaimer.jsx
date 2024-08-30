@@ -16,9 +16,9 @@ const Disclaimer = () => {
 
   const disclaimerList = async () => {
     let result = await getApiCall(base.disclaimerList)
-    console.log("setDisclaimerData", result[0].disclaimer_message);
-    setDisclaimerTitle(result[0].disclaimer_title)
-    setDisclaimerData(result[0].disclaimer_message)
+    console.log("setDisclaimerData", result[0]?.disclaimer_message);
+    setDisclaimerTitle(result[0]?.disclaimer_title)
+    setDisclaimerData(result[0]?.disclaimer_message)
   }
 
   return (
