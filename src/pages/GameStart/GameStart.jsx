@@ -124,43 +124,43 @@ const GameStart = () => {
   return (
     <>
       <Banner number={currentNumberCall} />      
-        {isLiveGameStatusClosed == true ? (
-          <div class="ticketSection">
-            <div class="outerContainer">
-              <div class="container mx-auto mt-1">
-                <div class="number-card">
-                {serialNumber.map((itemSerialNumber,index)=>(
-                  <div div class="number" key={index} style={{ backgroundColor: "#fff", color: "#000" }}>
-                    {itemSerialNumber} 
-                  </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        ):(
+      {isLiveGameStatusClosed == true ? (
         <div class="ticketSection">
           <div class="outerContainer">
             <div class="container mx-auto mt-1">
-              <div class="number-card"> 
-                {number?.map((itemNumber, index) => ( 
-                  <div div class="number" key={index} style={{ backgroundColor: itemNumber.status == "true" ? "red" : "#fff", color: itemNumber.status == "true" ? "#fff" : "#000", }}>
-                    {itemNumber.number} 
-                  </div>
+              <div class="number-card">
+              {serialNumber.map((itemSerialNumber,index)=>(
+                <div div class="number" key={index} style={{ backgroundColor: "#fff", color: "#000" }}>
+                  {itemSerialNumber} 
+                </div>
                 ))}
               </div>
             </div>
           </div>
         </div>
-        )} 
-        {isLiveGameStatusClosed == true ? (
-          <>
-          <PrevTicket />
-          </>
-        ):(
-      <Ticket number={number} gameId={gameId} setTicket={setTicket} ticket={ticket} />
-      )}
+      ):(
+      <div class="ticketSection">
+        <div class="outerContainer">
+          <div class="container mx-auto mt-1">
+            <div class="number-card"> 
+              {number?.map((itemNumber, index) => ( 
+                <div div class="number" key={index} style={{ backgroundColor: itemNumber.status == "true" ? "red" : "#fff", color: itemNumber.status == "true" ? "#fff" : "#000", }}>
+                  {itemNumber.number} 
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+      )} 
+
       <Winner ticket={ticket} />
+      
+      {isLiveGameStatusClosed == true ? (
+        <PrevTicket />
+      ):(
+        <Ticket number={number} gameId={gameId} setTicket={setTicket} ticket={ticket} />
+      )}
     </>
   )
 }

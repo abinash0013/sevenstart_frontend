@@ -1,5 +1,6 @@
-var mysql = require('mysql');
+var mysql = require('mysql2');
 
+//change this if issue creates on production
 var con = mysql.createConnection({
   host: "localhost",
   user: "root",

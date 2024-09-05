@@ -53,14 +53,16 @@ const Ticket = (props) => {
                         {item.id}
                       </div>
                       <div className="containerInfoInnerItem">
-                        {item.userName}
+                        {item.userName}:
                         {item.userPhone}
                       </div>
                     </div>
                     {/* <div className="containerInfoInnerItem">{item.winnerTag},{item.winnerPrize}</div> */}
+                    {item.winnerTag != "" && (
                     <div className="containerInfoInnerItem">
                       {item.winnerTag}
                     </div>
+                    )}
                   </div>
                   <div className="number-card">
                     {/* {console.log("eeeeewwew1", ticket[0].dateSet)}
