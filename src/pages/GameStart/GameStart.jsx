@@ -18,14 +18,23 @@ const GameStart = () => {
   const [isLiveGameStatusClosed, setIsLiveGameStatusClosed]=useState(true);
 
   // Initialize Firebase with your config
-  const REACT_APP_apiKey = process.env.REACT_APP_apiKey;
-  const REACT_APP_authDomain = process.env.REACT_APP_authDomain;
-  const REACT_APP_projectId = process.env.REACT_APP_projectId;
-  const REACT_APP_storageBucket = process.env.REACT_APP_storageBucket;
-  const REACT_APP_messagingSenderId = process.env.REACT_APP_messagingSenderId;
-  const REACT_APP_appId = process.env.REACT_APP_appId;
-  const REACT_APP_measurementId = process.env.REACT_APP_measurementId;
-  const REACT_APP_databaseURL = process.env.REACT_APP_databaseURL;
+  // const REACT_APP_apiKey = process.env.REACT_APP_apiKey;
+  // const REACT_APP_authDomain = process.env.REACT_APP_authDomain;
+  // const REACT_APP_projectId = process.env.REACT_APP_projectId;
+  // const REACT_APP_storageBucket = process.env.REACT_APP_storageBucket;
+  // const REACT_APP_messagingSenderId = process.env.REACT_APP_messagingSenderId;
+  // const REACT_APP_appId = process.env.REACT_APP_appId;
+  // const REACT_APP_measurementId = process.env.REACT_APP_measurementId;
+  // const REACT_APP_databaseURL = process.env.REACT_APP_databaseURL;
+  
+  const REACT_APP_apiKey = "AIzaSyAHTly3YJDEfgw4-LjpOGLdbsK43iCodec";
+  const REACT_APP_authDomain = "sevenstarttambola.firebaseapp.com";
+  const REACT_APP_projectId = "sevenstarttambola";
+  const REACT_APP_storageBucket = "sevenstarttambola.appspot.com";
+  const REACT_APP_messagingSenderId = "58410367493";
+  const REACT_APP_appId = "1:58410367493:web:5f11a4d6d5a5922ed27a6c";
+  const REACT_APP_measurementId = "G-BS4T9F2MK2";
+  const REACT_APP_databaseURL = "https://sevenstarttambola-default-rtdb.firebaseio.com";
 
   const firebaseConfig = {
     apiKey: REACT_APP_apiKey,
@@ -156,11 +165,11 @@ const GameStart = () => {
 
       <Winner ticket={ticket} />
       
-      {isLiveGameStatusClosed == true ? (
+      {/* {isLiveGameStatusClosed == true ? (
         <PrevTicket />
-      ):(
-        <Ticket number={number} gameId={gameId} setTicket={setTicket} ticket={ticket} />
-      )}
+      ):( */}
+      <Ticket number={number} gameId={gameId} setTicket={setTicket} ticket={ticket} />
+      {/* )} */}
     </>
   )
 }
